@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm visits.log
+touch visits.log
+chmod 777 visits.log
