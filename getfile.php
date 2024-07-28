@@ -15,7 +15,6 @@ $file=$_GET['file'];
 
 //
 $fp = fopen("log/visits.log", "a");
-//if ($_SERVER['REMOTE_ADDR']!="88.30.28.138"&&!$blocked) 
 fwrite($fp, date('d-m-Y H:i:s')." ".$_SERVER['REMOTE_ADDR']." Downloading ".$path."\n");
 fclose($fp);
 
