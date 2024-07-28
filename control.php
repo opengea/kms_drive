@@ -10,9 +10,7 @@ $lang=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
 if (strpos($_SERVER['REQUEST_URI'],"log")) { exit;}
 if ($_GET['path']) {
 $path=$_GET['path'];
-//print_r($_GET['path']);
-$_GET['path']="";//echo 'location: https://www.kmscloud.com/drive/'.str_replace("%2F","/",$_GET['path']);
-//header('location: https://www.kmscloud.com/drive/'.str_replace("%2F","/",$path));
+$_GET['path']="";
 }
 
 if (strpos(" ".$_SERVER['HTTP_USER_AGENT'],"TelegramBot")||strpos(" ".$_SERVER['HTTP_USER_AGENT'],"facebook")) $blocked_all=true;

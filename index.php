@@ -289,7 +289,7 @@ console.log('removed');
 }
  function download(path,file) {
   //   var xhr = new XMLHttpRequest();
-     var url = "//kmscloud.com/drive/getfile.php?path="+path+"&file="+file;
+     var url = "/drive/getfile.php?path="+path+"&file="+file;
    console.log(url);
 //	xhr.open("GET", url, true);
 	window.open(url, '_self');
@@ -388,7 +388,7 @@ window.addEventListener('scroll', function() {
 </script>
 <br><br>
 <? if ($path!="content") { ?>
-<div class="grey folder" data-link="//kmscloud.com/drive/content<?=$add_params?>"><a href="//kmscloud.com/drive/content/habitatges/<?=$add_params?>"><div class="icon left"><?=$back?> </div><div class="foldername left"><?=$l[$lang]['_BACK']?></div></a></div>
+<div class="grey folder" data-link="/drive/content<?=$add_params?>"><a href="/drive/content/habitatges/<?=$add_params?>"><div class="icon left"><?=$back?> </div><div class="foldername left"><?=$l[$lang]['_BACK']?></div></a></div>
 <? } ?>
 </body>
 </html>
