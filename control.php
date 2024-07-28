@@ -7,8 +7,6 @@ $blocked_all=false;//true;//false;//true;//false;
 
 $lang=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
 
-
-if ($data['HTTP_ACCEPT_LANGUAGE']=="fr-FR,fr;q=0.9"||$data['HTTP_ACCEPT_LANGUAGE']=="en-GB,en;q=0.9") {$blocked_all=false;}
 if (strpos($_SERVER['REQUEST_URI'],"log")) { exit;}
 if ($_GET['path']) {
 $path=$_GET['path'];
@@ -64,17 +62,14 @@ if ($_GET['resourcekey']) {
 	$blocked=false;
 	}
 
-	if ($_GET['resourcekey']=="2ef5f71709b4e99cd8866d7ee120858aa50a82f5b3e734360e03b1cddc87d88b") { $blocked_opengea=false; $blocked=true;$blocked_all=true; } 
 	else { $blocked_opengea=true; }
 
 }
 if ($_GET['resourcekey']=="")  $blocked_opengea=true;
 $visible=true;
-//if (strpos($data['REQUEST_URI'],"documentos")&&$data['HTTP_ACCEPT_LANGUAGE']!="fr-FR,fr;q=0.9") {$visible=false; $blocked=true;}
 
 
 $fp = fopen("log/visits.log", "a");
-//if ($_SERVER['REMOTE_ADDR']!="88.30.28.138"&&!$blocked) fwrite($fp, print_r($data,true));
 if (!$blocked) fwrite($fp, print_r($data,true));
 
 fclose($fp);
